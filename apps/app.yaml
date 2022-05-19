@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-apps
+  namespace: argocd
+spec:
+  destination:
+    name: 'in-cluster'
+    namespace: argocd
+    server: ''
+  source:
+    path: app1
+    repoURL: 'https://github.com/tnamoradze/gitops-demo.git'
+    targetRevision: main
+  project: default
